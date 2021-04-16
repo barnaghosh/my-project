@@ -1,0 +1,22 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    max-width: 640px;
+    margin: auto;
+    border: 2px solid black;
+    background: white;
+}
+.main .current,.img1 img{
+    width: 100%;
+}
+.img1{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+    padding: 10px;
+}
+.fade-in{
+    opacity: 0.5;
+}
