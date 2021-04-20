@@ -283,7 +283,7 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=7537fc2df
                     }
                     else if(hours==0){
                         hs=12;
-                        am_pm=`PM`;
+                        am_pm=`AM`;
                        
                     }
                     else{
