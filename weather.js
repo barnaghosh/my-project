@@ -11,7 +11,7 @@ function f(){
     let city=document.querySelector("#input").value;
     
     
-fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=7537fc2df623430a5e00f2e755b75665`)
+fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=7537fc2df623430a5e00f2e755b75665`)
             .then((res)=>{
                 return res.json();
             })
@@ -19,12 +19,7 @@ fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=7537fc2df6
                 console.log(data)
                 document.querySelector("#input").value="";
                 document.querySelector(".card-action").style.display="block";
-                
-                
-
-
-                function check(){
-                    let temp=(data.main.temp-273.15).toFixed(2);
+                let temp=(data.main.temp-273.15).toFixed(2);
                 let feel=(data.main.feels_like-273.15).toFixed(2);
                 let mintemp=(data.main.temp_min-273.15).toFixed(2);
                 let maxtemp=(data.main.temp_max-273.15).toFixed(2);
@@ -51,7 +46,7 @@ fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=7537fc2df6
                 document.querySelector(".feel").innerHTML=`<span class="feel">Feels Like :${feel}&#176C</span>`;
                 document.querySelector(".min-max").innerHTML=`Min: ${mintemp}&#176C | Max: ${maxtemp}&#176C `;
                 document.querySelector(".con").innerHTML=`${data.weather[0].description}`;
-                document.querySelector(".icon img").src="http://openweathermap.org/img/wn/11d@2x.png"
+                // document.querySelector(".icon img").src="http://openweathermap.org/img/wn/11d@2x.png"
                 let wid=data.weather[0].id;
                
 
@@ -59,10 +54,10 @@ fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=7537fc2df6
                 if(wid<250){
                     document.querySelector("body").style.backgroundImage=`url('Thunderstrome1.jpg')`
                     if(hour>17 || hour<6){
-                        document.querySelector(".icon img").src="http://openweathermap.org/img/wn/11n@2x.png"
+                        document.querySelector(".icon img").src="https://openweathermap.org/img/wn/11n@2x.png"
                     }
                     else{
-                        document.querySelector(".icon img").src="http://openweathermap.org/img/wn/11d@2x.png"
+                        document.querySelector(".icon img").src="https://openweathermap.org/img/wn/11d@2x.png"
                     }
                 }
                 else if(wid<350||(520==wid || wid==531|| wid==522 )){
@@ -73,19 +68,19 @@ fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=7537fc2df6
                         document.querySelector("body").style.backgroundImage=`url('drizzle.jpg')`
                     }
                     if(hour>17 || hour<6){
-                        document.querySelector(".icon img").src="http://openweathermap.org/img/wn/09n@2x.png"
+                        document.querySelector(".icon img").src="https://openweathermap.org/img/wn/09n@2x.png"
                     }
                     else{
-                        document.querySelector(".icon img").src="http://openweathermap.org/img/wn/09d@2x.png"
+                        document.querySelector(".icon img").src="https://openweathermap.org/img/wn/09d@2x.png"
                     }
                 }
                 else if(wid<505){
                     document.querySelector("body").style.backgroundImage=`url('rain.jpg')`
                     if(hour>17 || hour<6){
-                        document.querySelector(".icon img").src="http://openweathermap.org/img/wn/10n@2x.png"
+                        document.querySelector(".icon img").src="https://openweathermap.org/img/wn/10n@2x.png"
                     }
                     else{
-                        document.querySelector(".icon img").src="http://openweathermap.org/img/wn/10d@2x.png"
+                        document.querySelector(".icon img").src="https://openweathermap.org/img/wn/10d@2x.png"
                     }
                 }
                 else if(wid<630 ||(wid==511)){
@@ -96,10 +91,10 @@ fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=7537fc2df6
                         document.querySelector("body").style.backgroundImage=`url('snow.jpg')`
                     }
                     if(hour>17 || hour<6){
-                        document.querySelector(".icon img").src="http://openweathermap.org/img/wn/13n@2x.png"
+                        document.querySelector(".icon img").src="https://openweathermap.org/img/wn/13n@2x.png"
                     }
                     else{
-                        document.querySelector(".icon img").src="http://openweathermap.org/img/wn/13d@2x.png"
+                        document.querySelector(".icon img").src="https://openweathermap.org/img/wn/13d@2x.png"
                     }
                 }
                 else if(wid<800){
@@ -107,10 +102,10 @@ fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=7537fc2df6
                     if(wid==701){
                         document.querySelector("body").style.backgroundImage=`url('mist.jpg')`
                     if(hour>17 || hour<6){
-                        document.querySelector(".icon img").src="http://openweathermap.org/img/wn/50n@2x.png"
+                        document.querySelector(".icon img").src="https://openweathermap.org/img/wn/50n@2x.png"
                     }
                     else{
-                        document.querySelector(".icon img").src="http://openweathermap.org/img/wn/50d@2x.png"
+                        document.querySelector(".icon img").src="https://openweathermap.org/img/wn/50d@2x.png"
                     }
                     }
 
@@ -118,96 +113,96 @@ fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=7537fc2df6
                     if(wid==711){
                         document.querySelector("body").style.backgroundImage=`url('smoke.jpg')`
                     if(hour>17 || hour<6){
-                        document.querySelector(".icon img").src="http://openweathermap.org/img/wn/50n@2x.png"
+                        document.querySelector(".icon img").src="https://openweathermap.org/img/wn/50n@2x.png"
                     }
                     else{
-                        document.querySelector(".icon img").src="http://openweathermap.org/img/wn/50d@2x.png"
+                        document.querySelector(".icon img").src="https://openweathermap.org/img/wn/50d@2x.png"
                     }
                     }
                     if(wid==721){
                         
                     if(hour>17 || hour<6){
                         document.querySelector("body").style.backgroundImage=`url('haze n.jpg')`
-                        document.querySelector(".icon img").src="http://openweathermap.org/img/wn/50n@2x.png"
+                        document.querySelector(".icon img").src="https://openweathermap.org/img/wn/50n@2x.png"
                     }
                     else{
                         document.querySelector("body").style.backgroundImage=`url('haze.jpg')`
-                        document.querySelector(".icon img").src="http://openweathermap.org/img/wn/50d@2x.png"
+                        document.querySelector(".icon img").src="https://openweathermap.org/img/wn/50d@2x.png"
                     }
                     }
                     if(wid==731){
                         document.querySelector("body").style.backgroundImage=`url('dust.jpg')`
                     if(hour>17 || hour<6){
-                        document.querySelector(".icon img").src="http://openweathermap.org/img/wn/50n@2x.png"
+                        document.querySelector(".icon img").src="https://openweathermap.org/img/wn/50n@2x.png"
                     }
                     else{
-                        document.querySelector(".icon img").src="http://openweathermap.org/img/wn/50d@2x.png"
+                        document.querySelector(".icon img").src="https://openweathermap.org/img/wn/50d@2x.png"
                     }
                     }
                     if(wid==741){
                         document.querySelector("body").style.backgroundImage=`url('frog.jpg')`
                     if(hour>17 || hour<6){
-                        document.querySelector(".icon img").src="http://openweathermap.org/img/wn/50n@2x.png"
+                        document.querySelector(".icon img").src="https://openweathermap.org/img/wn/50n@2x.png"
                     }
                     else{
-                        document.querySelector(".icon img").src="http://openweathermap.org/img/wn/50d@2x.png"
+                        document.querySelector(".icon img").src="https://openweathermap.org/img/wn/50d@2x.png"
                     }
                     }
 
                     if(wid==751){
                         document.querySelector("body").style.backgroundImage=`url('sand.jpg')`
                     if(hour>17 || hour<6){
-                        document.querySelector(".icon img").src="http://openweathermap.org/img/wn/50n@2x.png"
+                        document.querySelector(".icon img").src="https://openweathermap.org/img/wn/50n@2x.png"
                     }
                     else{
-                        document.querySelector(".icon img").src="http://openweathermap.org/img/wn/50d@2x.png"
+                        document.querySelector(".icon img").src="https://openweathermap.org/img/wn/50d@2x.png"
                     }
                     }
                     if(wid==761){
                         document.querySelector("body").style.backgroundImage=`url('dust.jpg')`
                     if(hour>17 || hour<6){
-                        document.querySelector(".icon img").src="http://openweathermap.org/img/wn/50n@2x.png"
+                        document.querySelector(".icon img").src="https://openweathermap.org/img/wn/50n@2x.png"
                     }
                     else{
-                        document.querySelector(".icon img").src="http://openweathermap.org/img/wn/50d@2x.png"
+                        document.querySelector(".icon img").src="https://openweathermap.org/img/wn/50d@2x.png"
                     }
                     }
                     if(wid==762){
                         document.querySelector("body").style.backgroundImage=`url('ash.jpg')`
                     if(hour>17 || hour<6){
-                        document.querySelector(".icon img").src="http://openweathermap.org/img/wn/50n@2x.png"
+                        document.querySelector(".icon img").src="https://openweathermap.org/img/wn/50n@2x.png"
                     }
                     else{
-                        document.querySelector(".icon img").src="http://openweathermap.org/img/wn/50d@2x.png"
+                        document.querySelector(".icon img").src="https://openweathermap.org/img/wn/50d@2x.png"
                     }
                     }
                     if(wid==771){
                         document.querySelector("body").style.backgroundImage=`url('sq.jpg')`
                     if(hour>17 || hour<6){
-                        document.querySelector(".icon img").src="http://openweathermap.org/img/wn/50n@2x.png"
+                        document.querySelector(".icon img").src="https://openweathermap.org/img/wn/50n@2x.png"
                     }
                     else{
-                        document.querySelector(".icon img").src="http://openweathermap.org/img/wn/50d@2x.png"
+                        document.querySelector(".icon img").src="https://openweathermap.org/img/wn/50d@2x.png"
                     }
                     }
                     if(wid==781){
                         document.querySelector("body").style.backgroundImage=`url('turnado.jpg')`
                     if(hour>17 || hour<6){
-                        document.querySelector(".icon img").src="http://openweathermap.org/img/wn/50n@2x.png"
+                        document.querySelector(".icon img").src="https://openweathermap.org/img/wn/50n@2x.png"
                     }
                     else{
-                        document.querySelector(".icon img").src="http://openweathermap.org/img/wn/50d@2x.png"
+                        document.querySelector(".icon img").src="https://openweathermap.org/img/wn/50d@2x.png"
                     }
                     }
                 }
                 else if(wid==800){
                     
                     if(hour>17 || hour<6){
-                        document.querySelector(".icon img").src="http://openweathermap.org/img/wn/01n@2x.png"
+                        document.querySelector(".icon img").src="https://openweathermap.org/img/wn/01n@2x.png"
                         document.querySelector("body").style.backgroundImage=`url('clear night.jpg')`
                     }
                     else{
-                        document.querySelector(".icon img").src="http://openweathermap.org/img/wn/01d@2x.png"
+                        document.querySelector(".icon img").src="https://openweathermap.org/img/wn/01d@2x.png"
                         document.querySelector("body").style.backgroundImage=`url('clear sky.jpg')`
                     }
                 }
@@ -215,35 +210,40 @@ fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=7537fc2df6
 
                     if(hour>17 || hour<6){
                         document.querySelector("body").style.backgroundImage=`url('cloud n.jpg')`
-                        document.querySelector(".icon img").src="http://openweathermap.org/img/wn/02n@2x.png"
+                        document.querySelector(".icon img").src="https://openweathermap.org/img/wn/02n@2x.png"
                     }
                     else{
                         document.querySelector("body").style.backgroundImage=`url('cloud.jpg')`
-                        document.querySelector(".icon img").src="http://openweathermap.org/img/wn/02d@2x.png"
+                        document.querySelector(".icon img").src="https://openweathermap.org/img/wn/02d@2x.png"
                     }
                 }
                 else if(wid==802){
                     document.querySelector("body").style.backgroundImage=`url('cloud.jpg')`
                     if(hour>17 || hour<6){
-                        document.querySelector(".icon img").src="http://openweathermap.org/img/wn/03n@2x.png"
+                        document.querySelector(".icon img").src="https://openweathermap.org/img/wn/03n@2x.png"
                     }
                     else{
-                        document.querySelector(".icon img").src="http://openweathermap.org/img/wn/03d@2x.png"
+                        document.querySelector(".icon img").src="https://openweathermap.org/img/wn/03d@2x.png"
                     }
                 }
                 else if(wid==803 || wid==804){
                     document.querySelector("body").style.backgroundImage=`url('cloud.jpg')`
                     if(hour>17 || hour<6){
-                        document.querySelector(".icon img").src="http://openweathermap.org/img/wn/04n@2x.png"
+                        document.querySelector(".icon img").src="https://openweathermap.org/img/wn/04n@2x.png"
                     }
                     else{
-                        document.querySelector(".icon img").src="http://openweathermap.org/img/wn/04d@2x.png"
+                        document.querySelector(".icon img").src="https://openweathermap.org/img/wn/04d@2x.png"
                     }
                 }
                 else{
                     document.querySelector(".icon img").src="";
                 }
                
+                
+
+
+                function check(){
+                    
                 
                     var g=new Date();
                     var n=g.getTimezoneOffset();
@@ -278,6 +278,11 @@ fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=7537fc2df6
                     }
                     else if(hours==12){
                         hs=hours;
+                        am_pm=`PM`;
+                       
+                    }
+                    else if(hours==0){
+                        hs=12;
                         am_pm=`PM`;
                        
                     }
