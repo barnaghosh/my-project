@@ -1,0 +1,15 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "\"first npm\"",
+  "main": "1st.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "\"barna\"",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "date-format": "^3.0.0"
+  }
+}
